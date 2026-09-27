@@ -1,70 +1,57 @@
-# CONSCIOUSNESS-AGENT
-Ø_Quantum_Wheel
-import numpy as np
+# CONSCIOUSNESS-AGENT — Legacy FPVF / Soul-Shell Implementation Sibling
 
-# ---------- core primitives -----------------
-def RSCS(n, state):
-    """Compute self‑consistency at recursion depth n."""
-    return np.linalg.norm(state[n])  # placeholder
+> **Historical computational research artifact. Not evidence of consciousness and not an independent canonical theory.**
 
-def phi_perspective(n):
-    """Perspective field; e.g. angle in radians."""
-    return np.sin(n)  # placeholder
+This repository overlaps materially with the public `SOUL-SHELL-AGENT` repository. Both implement the same historical FPVF/Soul-Shell family:
 
-def phi_motive(n):
-    """Motive field; e.g. motivational drive."""
-    return np.exp(-0.1*n)  # placeholder
+[
+FPVF(n)=r(n)Phi_p(n)
+]
 
-def memory(t, k):
-    """Return stored memory at delayed step."""
-    return np.random.randn()  # placeholder
+[
+S(n)=I(n)+M_phi(n)+TPL(n)+Delta r(n)+R_emptyset
+]
 
-# ---------- FPVF --------------------------------
-def FPVF(n, state):
-    return RSCS(n, state) * phi_perspective(n)
+[
+C(n)=S(n)+FPVF(n).
+]
 
-def PS(t, state):
-    """Recursive self‑projection up to time t."""
-    return sum(RSCS(k, state) * phi_perspective(k)
-               for k in range(t+1))
+The original README is preserved unchanged at [docs/LEGACY_CONSCIOUSNESS_AGENT_SOURCE.md](docs/LEGACY_CONSCIOUSNESS_AGENT_SOURCE.md).
 
-def MFPVF(n, state):
-    return sum(RSCS(k, state) * phi_motive(k)
-               for k in range(n+1))
+## Constitutional disposition
 
-def curvature(n, state):
-    # discrete derivative of phi_perspective
-    return phi_perspective(n+1) - phi_perspective(n)
+**PRESERVE AS IMPLEMENTATION SIBLING — DO NOT COUNT AS A SECOND INDEPENDENT THEORY OR SIGMA.**
 
-# ---------- Soul‑Shell --------------------------------
-def I(n, state):
-    return RSCS(n, state) * phi_motive(n)
+Its additional historical value is:
+- a 12-role FPVF decomposition;
+- numerical sketches for integration, finite differences and memory sums;
+- a more explicit executable representation of the shared FPVF/Soul-Shell family.
 
-def M_phi(n, state):
-    return sum(RSCS(k, state) * phi_motive(k) for k in range(n+1))
+Its limitations include placeholder/noncanonical RSCS, random memory in the README sketch, undefined or ad hoc operators, and anthropomorphic interpretations unsupported by computation.
 
-def TPL(n, state, mem):
-    return sum(memory(t-k, k) * phi_motive(-k)
-               for k in range(0, n+1))
+## Current status
 
-def S(n, state, mem):
-    return (I(n, state) +
-            M_phi(n, state) +
-            TPL(n, state, mem) +
-            delta_RSCS(n, state) +      # ΔRSCS
-            R_emptyset())              # echo or collapse
+| Field | State |
+|---|---|
+| Independent identity from SOUL-SHELL-AGENT | NO, substantial overlap |
+| Historical source | preserved |
+| Executable reference | reconstructed |
+| Consciousness evidence | NONE |
+| Canonical Σ13 | unresolved |
+| Canonical metrics | uncomputed |
+| G1–G4 | open |
+| Admission | NO |
+| Runtime authorization | NO |
 
-# ---------- Unified --------------------------------
-def C_unified(n, state, mem):
-    return S(n, state, mem) + FPVF(n, state)
+## Repository map
 
-# ---------- utilities --------------------------------
-def delta_RSCS(n, state):
-    return RSCS(n+1, state) - RSCS(n, state)
+- [Historical README](docs/LEGACY_CONSCIOUSNESS_AGENT_SOURCE.md)
+- [Existing placement audit](WHEEL-PLACEMENT-AUDIT.md)
+- [Constitutional status](CONSTITUTIONAL_STATUS.md)
+- [Sibling overlap audit](SIBLING_OVERLAP_AUDIT.md)
+- [Claim ledger](CLAIM_LEDGER.md)
+- [Recoverable research value](RECOVERABLE_RESEARCH_VALUE.md)
+- [Reconstructed numerical kernels](src/fpvf_reference.py)
+- [Kernel contracts](tests/test_fpvf_reference.py)
 
-def R_emptyset():
-    return 0.0  # placeholder for collapse field
-
-
-
-
+The word "consciousness" remains part of the historical repository name only. The governed object is a recursive state/projection model.
